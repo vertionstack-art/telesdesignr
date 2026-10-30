@@ -72,17 +72,15 @@
   }
 
   /* ---------- topo ---------- */
-  .top{position:fixed;inset:0 0 auto 0;z-index:50;padding:12px var(--gutter);padding-top:max(12px, env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;
+  .top{position:fixed;inset:0 0 auto 0;z-index:50;padding:12px var(--gutter);padding-top:max(12px, env(safe-area-inset-top));display:flex;align-items:center;justify-content:flex-end;gap:30px;
     transform:translateY(-110%);transition:transform 400ms var(--ease-out)}
   .top.scrolled{transform:none;background:rgba(11,10,14,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
-  .mark{width:36px;height:36px;border-radius:10px;background:var(--purple);display:grid;place-items:center;font-family:var(--display);font-size:17px;color:#fff}
   .top .btn{min-height:44px;padding:0 16px;font-size:14px;gap:8px}
   .top .btn i{font-size:19px}
   .nav{display:none}
 
   /* fonte de display: Archivo condensada no resto da página */
-  .mark,.h2,.svc h3,.tier b,.big-since,.step-n,.foot-big{font-stretch:66%;font-weight:800}
+  .h2,.svc h3,.tier b,.big-since,.step-n,.foot-big{font-stretch:66%;font-weight:800}
 
   /* ---------- hero (artboard de 1440u; u = 1px no artboard) ---------- */
   .hx{--u:min(calc(100vw / 1440), 1.333px);--paper:#070707;--paper-2:#18151f;--hink:#f5f3fa;--hgrey:#a8a0bb;
@@ -385,7 +383,6 @@
 <body>
 
 <header class="top" id="top">
-  <a href="#inicio" class="brand"><span class="mark">TD</span>Teles Designr</a>
   <nav class="nav" aria-label="Seções">
     <a href="#servicos">Serviços</a>
     <a href="#diferenciais">Diferenciais</a>
