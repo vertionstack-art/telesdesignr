@@ -292,12 +292,12 @@
   .sim-q{margin:22px 0 10px;font-size:14px;font-weight:700;color:#e6e1ef}
   .pick{display:flex;flex-wrap:wrap;gap:8px}
   .pick label{position:relative}
-  .pick input,.svc-toggle input,.opt input,.chk-row input{position:absolute;opacity:0;width:1px;height:1px}
+  .pick input,.svc-toggle input,.opt input{position:absolute;opacity:0;width:1px;height:1px}
   .pick span{display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);font-size:15px;font-weight:600;cursor:pointer;user-select:none;-webkit-user-select:none;
     transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,transform 160ms var(--ease-out)}
   .pick span:active{transform:scale(.97)}
   .pick input:checked + span{background:var(--purple);border-color:var(--purple);color:#fff}
-  .pick input:focus-visible + span,.svc-toggle input:focus-visible + .tg,.opt input:focus-visible + span,.chk-row input:focus-visible + span{outline:3px solid var(--lilac);outline-offset:2px}
+  .pick input:focus-visible + span,.svc-toggle input:focus-visible + .tg,.opt input:focus-visible + span{outline:3px solid var(--lilac);outline-offset:2px}
   .pick small{margin-left:6px;font-size:12px;font-weight:700;opacity:.75}
 
   .svc-pick{border-radius:18px;border:1.5px solid rgba(255,255,255,.14);background:var(--ink);transition:border-color 200ms ease,background-color 200ms ease}
@@ -333,9 +333,6 @@
   .stepper button:active{background:var(--ink-3)}
   .stepper input{width:42px;height:42px;border:0;background:transparent;color:var(--paper);text-align:center;font:inherit;font-size:16px;font-weight:800;-moz-appearance:textfield}
   .stepper input::-webkit-inner-spin-button,.stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-  .chk-row{position:relative;display:block;cursor:pointer}
-  .chk-row span{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.18);font-size:14px;font-weight:700;transition:background-color 180ms ease,border-color 180ms ease}
-  .chk-row input:checked + span{background:var(--purple);border-color:var(--purple)}
 
   .sim-sum{position:relative;border-radius:var(--r-card);padding:6px;background:rgba(255,255,255,.06);border:1px solid var(--line);scroll-margin-top:84px}
   .sum-in{border-radius:calc(var(--r-card) - 6px);background:var(--paper);color:var(--ink);padding:22px 20px}
@@ -735,8 +732,6 @@
                 </div>
                 <div class="extra"><p>Carrosséis no mês<small>De 5 a 10 slides</small></p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos carrosséis">−</button><input type="number" name="carrossel" value="0" min="0" max="20" inputmode="numeric" aria-label="Carrosséis no mês"><button type="button" data-step="1" aria-label="Mais carrosséis">+</button></div></div>
                 <div class="extra"><p>Reels editados no mês</p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos reels">−</button><input type="number" name="reels" value="0" min="0" max="20" inputmode="numeric" aria-label="Reels no mês"><button type="button" data-step="1" aria-label="Mais reels">+</button></div></div>
-                <div class="extra"><p>Outras redes além do Instagram<small>TikTok, Facebook…</small></p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos redes">−</button><input type="number" name="redesExtra" value="0" min="0" max="5" inputmode="numeric" aria-label="Redes extras"><button type="button" data-step="1" aria-label="Mais redes">+</button></div></div>
-                <label class="chk-row"><input type="checkbox" name="stories"><span><i class="ph-bold ph-plus" aria-hidden="true"></i>Stories (até 3 por semana)</span></label>
               </div>
             </div>
 
@@ -916,7 +911,7 @@
     },
     artes: { 5: 317.97, 10: 437.89, 20: 1047.93 },
     videos: { 4: 427.97, 8: 737.89, 12: 1067.93 },
-    redes: { planos: { 2: 397.89, 3: 557.93, 5: 857.97 }, carrossel: 107.93, reels: 67.97, stories: 127.89, redeExtra: 87.97 },
+    redes: { planos: { 2: 397.89, 3: 557.93, 5: 1297.97 }, carrossel: 177.93, reels: 97.89 },
     diaria: 257.97, // captação: valor fixo, fora do ajuste de perfil e do combo
     combo: 0.10,
     parcelas: 12,
@@ -942,13 +937,11 @@
     if (marcados.includes('artes')) linhas.push({ txt: `Pacote de ${f.artes.value} artes`, v: PRECOS.artes[f.artes.value] });
     if (marcados.includes('videos')) linhas.push({ txt: `Pacote de ${f.videos.value} vídeos`, det: 'institucionais / Reels', v: PRECOS.videos[f.videos.value] });
     if (marcados.includes('redes')) {
-      const r = PRECOS.redes; const car = clampInt(f.carrossel), ree = clampInt(f.reels), ext = clampInt(f.redesExtra);
+      const r = PRECOS.redes; const car = clampInt(f.carrossel), ree = clampInt(f.reels);
       const det = [`${f.plano.value} posts por semana`];
       let v = r.planos[f.plano.value];
       if (car) { v += car * r.carrossel; det.push(`${car} ${car > 1 ? 'carrosséis' : 'carrossel'}`); }
       if (ree) { v += ree * r.reels; det.push(`${ree} reels`); }
-      if (f.stories.checked) { v += r.stories; det.push('stories'); }
-      if (ext) { v += ext * r.redeExtra; det.push(`+${ext} rede${ext > 1 ? 's' : ''}`); }
       linhas.push({ txt: 'Gestão de redes', det: det.join(', '), v, mensal: true });
     }
     if (marcados.includes('captacao')) {
