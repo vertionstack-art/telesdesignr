@@ -95,9 +95,9 @@
   .hx-art > .hx-photo{z-index:1}
   /* fundo da cor do papel dentro da caixa: a foto P&B herda o tom lilás pelo modo luminosity */
   .hx-ph{position:absolute;inset:0;background:var(--paper);isolation:isolate}
-  .hx-photo img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;
+  .hx-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0;mix-blend-mode:luminosity;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-  .hx-plate{position:absolute;left:calc(var(--u) * 194);top:calc(var(--u) * 530);width:calc(var(--u) * 364);height:calc(var(--u) * 73);display:flex;align-items:center;gap:calc(var(--u) * 14);padding:0 calc(var(--u) * 20);
+  .hx-plate{position:absolute;left:calc(var(--u) * 200);top:calc(var(--u) * 690);width:calc(var(--u) * 364);height:calc(var(--u) * 73);display:flex;align-items:center;gap:calc(var(--u) * 14);padding:0 calc(var(--u) * 20);
     border-radius:calc(var(--u) * 12);background:rgba(19,14,29,.55);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
   .hx-plate svg{width:calc(var(--u) * 34);height:calc(var(--u) * 30);flex:none}
   .hx-plate b{font-size:calc(var(--u) * 21);letter-spacing:.02em;font-stretch:118%;font-weight:700;white-space:nowrap}
@@ -212,8 +212,7 @@
     .hx-about p{max-width:30ch}
     .hx-cta{align-self:flex-start;margin-top:calc(var(--u) * 18)}
     .hx-photo{width:calc(100% + var(--u) * 32);margin-left:calc(var(--u) * -16);height:calc(var(--u) * 470);margin-top:calc(var(--u) * 24);overflow:hidden}
-    .hx-photo img{object-position:50% 12%}
-    .hx-plate{left:calc(50% - var(--u) * 150);top:calc(var(--u) * 268);width:calc(var(--u) * 300);height:calc(var(--u) * 60)}
+    .hx-plate{left:calc(50% - var(--u) * 150);top:calc(var(--u) * 336);width:calc(var(--u) * 300);height:calc(var(--u) * 60)}
     .hx-plate b{font-size:calc(var(--u) * 18)}
     .hx-logos{left:calc(var(--u) * 20);right:calc(var(--u) * 20);top:auto;bottom:calc(var(--u) * 22);font-size:calc(var(--u) * 12)}
     .hx-tag{align-self:flex-start;margin-top:calc(var(--u) * 22)}
@@ -420,7 +419,7 @@
       <a class="hbtn hx-cta hx-fx" style="--d:4" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
 
       <div class="hx-photo">
-        <div class="hx-ph"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7dc8b8f3-4ccb-4599-8ce4-7f7c7881bad9.webp" width="1744" height="2336" fetchpriority="high" alt="Homem de costas com jaqueta escura, em estúdio"></div>
+        <div class="hx-ph"><img src="img/teles-designr.webp" width="896" height="1227" fetchpriority="high" alt="Lucas, da Teles Designr, de óculos e camiseta preta"></div>
         <div class="hx-plate hx-fx" style="--d:6">
           <svg viewBox="0 0 34 30" aria-hidden="true"><path d="M0 30 L13 4 L20 18 Z" fill="#8b2cff"/><path d="M15 30 L26 8 L34 30 Z" fill="#fff"/></svg>
           <b class="wide">TELES DESIGNR</b>
