@@ -62,6 +62,8 @@
   .btn .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;font-size:20px;transition:transform 220ms var(--ease-out)}
   .btn-wa{background:var(--wa);color:#03200e;box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
   .btn-wa .ic{background:rgba(3,32,14,.12)}
+  .btn-sim{background:var(--purple);color:#fff}
+  .btn-sim .ic{background:rgba(255,255,255,.16)}
   .btn-ghost{border:1.5px solid rgba(255,255,255,.28);color:var(--paper)}
   .btn-ghost .ic{background:rgba(255,255,255,.08)}
   @media (hover:hover) and (pointer:fine){
@@ -272,6 +274,113 @@
   .svc-cta .btn{width:100%;min-height:52px;justify-content:space-between;font-size:15px}
   .svc-cta .btn .ic{width:34px;height:34px;font-size:18px}
 
+  /* ---------- simulador de orçamento ---------- */
+  .sim{border-top:1px solid var(--line)}
+  .sim-grid{display:grid;gap:18px;margin-top:var(--s4);align-items:start}
+  .sim-step{border:1px solid var(--line);border-radius:var(--r-card);padding:22px 18px;background:var(--ink-2)}
+  .sim-step + .sim-step{margin-top:14px}
+  .sim-step legend{float:left;width:100%;display:flex;align-items:center;gap:12px;font-size:20px;font-weight:800;margin-bottom:18px}
+  .sim-step legend + *{clear:both}
+  .sim-step legend .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--purple);font-size:16px}
+  .sim-fields{display:grid;gap:14px}
+  .fld{display:grid;gap:7px}
+  .fld span{font-size:14px;font-weight:700;color:#e6e1ef}
+  .fld span em{font-style:normal;font-weight:500;color:var(--mute)}
+  .fld input{width:100%;min-height:52px;padding:0 16px;border-radius:var(--r-inner);border:1.5px solid rgba(255,255,255,.18);background:var(--ink);color:var(--paper);font:inherit;font-size:16px;transition:border-color 200ms ease}
+  .fld input::placeholder{color:#8d869c}
+  .fld input:focus{outline:none;border-color:var(--purple-2)}
+  .sim-q{margin:22px 0 10px;font-size:14px;font-weight:700;color:#e6e1ef}
+  .pick{display:flex;flex-wrap:wrap;gap:8px}
+  .pick label{position:relative}
+  .pick input,.svc-toggle input,.opt input,.chk-row input{position:absolute;opacity:0;width:1px;height:1px}
+  .pick span{display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);font-size:15px;font-weight:600;cursor:pointer;user-select:none;-webkit-user-select:none;
+    transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,transform 160ms var(--ease-out)}
+  .pick span:active{transform:scale(.97)}
+  .pick input:checked + span{background:var(--purple);border-color:var(--purple);color:#fff}
+  .pick input:focus-visible + span,.svc-toggle input:focus-visible + .tg,.opt input:focus-visible + span,.chk-row input:focus-visible + span{outline:3px solid var(--lilac);outline-offset:2px}
+  .pick small{margin-left:6px;font-size:12px;font-weight:700;opacity:.75}
+
+  .svc-pick{border-radius:18px;border:1.5px solid rgba(255,255,255,.14);background:var(--ink);transition:border-color 200ms ease,background-color 200ms ease}
+  .svc-pick + .svc-pick{margin-top:10px}
+  .svc-pick.on{border-color:var(--purple);background:#120d1c}
+  .svc-toggle{display:block;cursor:pointer;user-select:none;-webkit-user-select:none}
+  .svc-toggle .tg{display:flex;align-items:center;gap:14px;padding:16px}
+  .svc-toggle .ti{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r-inner);background:var(--ink-3);color:var(--purple-2);font-size:21px;transition:background-color 200ms ease,color 200ms ease}
+  .svc-pick.on .ti{background:var(--purple);color:#fff}
+  .svc-toggle b{display:block;font-size:17px;font-weight:800;line-height:1.2}
+  .svc-toggle small{display:block;margin-top:3px;font-size:13px;color:var(--mute);line-height:1.35}
+  .svc-toggle .box{flex:none;margin-left:auto;display:grid;place-items:center;width:28px;height:28px;border-radius:9px;border:1.5px solid rgba(255,255,255,.3);color:transparent;font-size:16px;transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease}
+  .svc-pick.on .box{background:var(--purple);border-color:var(--purple);color:#fff}
+  .svc-opts{display:none;padding:0 16px 18px;gap:10px}
+  .svc-pick.on .svc-opts{display:grid}
+  .opts{display:grid;gap:8px}
+  .opts.c3{grid-template-columns:repeat(3,1fr)}
+  .opt{position:relative;display:block;cursor:pointer}
+  .opt span{display:flex;flex-direction:column;justify-content:center;min-height:64px;height:100%;padding:10px 12px;border-radius:var(--r-inner);border:1.5px solid rgba(255,255,255,.16);background:var(--ink-2);transition:border-color 180ms ease,background-color 180ms ease,transform 160ms var(--ease-out)}
+  .opt span:active{transform:scale(.98)}
+  .opt b{font-size:15px;font-weight:800}
+  .opt em{font-style:normal;margin-top:2px;font-size:12.5px;line-height:1.3;color:var(--mute)}
+  .opt input:checked + span{border-color:var(--purple-2);background:#1d1330}
+  .opt input:checked + span em{color:#e3d6ff}
+  .note{font-size:13px;color:var(--mute);line-height:1.45}
+  .note i{color:var(--purple-2);vertical-align:-2px}
+  .extra{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+  .extra:first-of-type{border-top:0}
+  .extra p{font-size:14px;font-weight:600;line-height:1.3}
+  .extra p small{display:block;font-weight:500;color:var(--mute);font-size:12.5px}
+  .stepper{flex:none;display:flex;align-items:center;border-radius:999px;border:1.5px solid rgba(255,255,255,.18);overflow:hidden}
+  .stepper button{width:42px;height:42px;border:0;background:transparent;color:var(--paper);font-size:20px;cursor:pointer;touch-action:manipulation;transition:background-color 160ms ease}
+  .stepper button:active{background:var(--ink-3)}
+  .stepper input{width:42px;height:42px;border:0;background:transparent;color:var(--paper);text-align:center;font:inherit;font-size:16px;font-weight:800;-moz-appearance:textfield}
+  .stepper input::-webkit-inner-spin-button,.stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+  .chk-row{position:relative;display:block;cursor:pointer}
+  .chk-row span{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.18);font-size:14px;font-weight:700;transition:background-color 180ms ease,border-color 180ms ease}
+  .chk-row input:checked + span{background:var(--purple);border-color:var(--purple)}
+
+  .sim-sum{position:relative;border-radius:var(--r-card);padding:6px;background:rgba(255,255,255,.06);border:1px solid var(--line);scroll-margin-top:84px}
+  .sum-in{border-radius:calc(var(--r-card) - 6px);background:var(--paper);color:var(--ink);padding:22px 20px}
+  .sum-in h3{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .sum-who{margin-top:4px;font-size:14px;color:#5d5670}
+  .sum-empty{margin-top:18px;padding:18px;border-radius:var(--r-inner);background:#efeaf8;color:#4c4560;font-size:15px;line-height:1.45}
+  .sum-lines{list-style:none;margin-top:16px}
+  .sum-lines li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid #e3deec;font-size:15px}
+  .sum-lines li:first-child{border-top:0}
+  .sum-lines li span small{display:block;font-size:12.5px;color:#6f6880}
+  .sum-lines li b{flex:none;font-weight:800;font-variant-numeric:tabular-nums}
+  .sum-block{margin-top:14px;padding:16px;border-radius:var(--r-inner);background:#efeaf8}
+  .sum-block + .sum-block{margin-top:10px}
+  .sum-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#4c4560;font-variant-numeric:tabular-nums}
+  .sum-row + .sum-row{margin-top:6px}
+  .sum-row.disc{color:#1b8a45;font-weight:700}
+  .sum-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid #d9d2e8}
+  .sum-total span{font-size:14px;font-weight:700}
+  .sum-total b{font-family:var(--display);font-stretch:90%;font-weight:800;font-size:34px;line-height:1;letter-spacing:-.02em;color:var(--purple);font-variant-numeric:tabular-nums}
+  .sum-parc{margin-top:6px;text-align:right;font-size:14px;font-weight:700;color:var(--ink)}
+  .sum-from{margin-top:12px;font-size:13px;color:#6f6880;line-height:1.45}
+  .sum-perks{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .sum-perks span{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#ece3ff;color:#4a1d96;font-size:12.5px;font-weight:700}
+  .sum-in .btn{width:100%;margin-top:16px;justify-content:space-between}
+  .sum-in .btn[aria-disabled="true"]{opacity:.45;pointer-events:none;box-shadow:none}
+  .sum-hint{margin-top:10px;font-size:12.5px;color:#6f6880;text-align:center}
+
+  .sim-mini{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));z-index:5;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(21,19,26,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 40px -16px rgba(0,0,0,.8)}
+  .sim-mini p{font-size:12.5px;font-weight:600;color:var(--mute);line-height:1.2}
+  .sim-mini p b{display:block;font-size:18px;color:#fff;font-variant-numeric:tabular-nums}
+  .sim-mini a{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--purple);color:#fff;font-weight:800;font-size:14px}
+
+  @media (min-width:900px){
+    .sim-grid{grid-template-columns:1.25fr 1fr;gap:28px}
+    .sim-step{padding:28px}
+    .sim-fields{grid-template-columns:1fr 1fr}
+    .sim-sum{position:sticky;top:84px}
+    .sum-in{padding:28px}
+    .sim-mini{display:none}
+  }
+  @media (hover:hover) and (pointer:fine){
+    .pick span:hover,.opt span:hover{border-color:rgba(255,255,255,.4)}
+    .stepper button:hover{background:var(--ink-3)}
+  }
+
   /* ---------- diferenciais ---------- */
   .promise{background:var(--purple);color:#fff;overflow:hidden;position:relative}
   .promise .h2 .out{-webkit-text-stroke-color:#fff}
@@ -386,7 +495,7 @@
   <nav class="nav" aria-label="Seções">
     <a href="#servicos">Serviços</a>
     <a href="#diferenciais">Diferenciais</a>
-    <a href="#processo">Como funciona</a>
+    <a href="#simulador">Orçamento</a>
     <a href="#contato">Contato</a>
   </nav>
   <a class="btn btn-wa" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp</a>
@@ -399,8 +508,8 @@
         <span class="hx-pill" aria-hidden="true"></span>
         <a href="#inicio" class="on">Início</a>
         <a href="#servicos">Serviços</a>
-        <a href="#diferenciais" class="desk">Diferenciais</a>
-        <a href="#contato">Contato</a>
+        <a href="#simulador">Orçamento</a>
+        <a href="#contato" class="desk">Contato</a>
       </nav>
       <a class="hbtn hx-contact" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp<i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
       <p class="hx-date hx-fx" style="--d:1">Rio de Janeiro<span>Atendendo desde 2014</span></p>
@@ -499,7 +608,7 @@
                 <div class="tier"><b>Completa</b><span>Marca inteira</span></div>
               </div>
               <div class="svc-cta">
-                <a class="btn btn-wa" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Quero%20saber%20sobre%20os%20pacotes%20de%20identidade%20visual." target="_blank" rel="noopener">Pedir orçamento<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+                <a class="btn btn-sim" href="#simulador" data-pick="identidade">Simular preço<span class="ic"><i class="ph-bold ph-calculator" aria-hidden="true"></i></span></a>
               </div>
             </div>
           </div>
@@ -515,7 +624,7 @@
               <p class="benefit">Flyer, banner e post prontos pra imprimir ou postar. <strong>Sua divulgação nunca mais fica com cara de improviso.</strong></p>
               <div class="tags"><span class="tag">Flyers</span><span class="tag">Banners</span><span class="tag">Posts</span><span class="tag">e muito mais</span></div>
               <div class="svc-cta">
-                <a class="btn btn-wa" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Quero%20um%20pacote%20de%20artes." target="_blank" rel="noopener">Pedir orçamento<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+                <a class="btn btn-sim" href="#simulador" data-pick="artes">Simular preço<span class="ic"><i class="ph-bold ph-calculator" aria-hidden="true"></i></span></a>
               </div>
             </div>
           </div>
@@ -528,10 +637,10 @@
             </div>
             <div class="svc-body">
               <h3>Edição de vídeo</h3>
-              <p class="benefit">Cortes, legendas e ritmo que <strong>prendem quem está rolando o feed</strong> logo nos primeiros segundos.</p>
-              <div class="tags"><span class="tag">Reels</span><span class="tag">Stories</span><span class="tag">YouTube</span><span class="tag">Legendas</span></div>
+              <p class="benefit">Vídeos institucionais e Reels com cortes, legendas e ritmo que <strong>prendem quem está rolando o feed</strong>.</p>
+              <div class="tags"><span class="tag">Institucional</span><span class="tag">Reels</span><span class="tag">Eventos</span><span class="tag">Legendas</span></div>
               <div class="svc-cta">
-                <a class="btn btn-wa" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Preciso%20de%20edi%C3%A7%C3%A3o%20de%20v%C3%ADdeo." target="_blank" rel="noopener">Pedir orçamento<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+                <a class="btn btn-sim" href="#simulador" data-pick="videos">Simular preço<span class="ic"><i class="ph-bold ph-calculator" aria-hidden="true"></i></span></a>
               </div>
             </div>
           </div>
@@ -547,12 +656,115 @@
               <p class="benefit">Planejamento, artes e postagens no ritmo certo. <strong>Você cuida do negócio e seu perfil fica vivo.</strong></p>
               <div class="tags"><span class="tag">Instagram</span><span class="tag">Calendário de posts</span><span class="tag">Legendas</span></div>
               <div class="svc-cta">
-                <a class="btn btn-wa" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Quero%20saber%20sobre%20gest%C3%A3o%20de%20redes%20sociais." target="_blank" rel="noopener">Pedir orçamento<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+                <a class="btn btn-sim" href="#simulador" data-pick="redes">Simular preço<span class="ic"><i class="ph-bold ph-calculator" aria-hidden="true"></i></span></a>
               </div>
             </div>
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="sec sim" id="simulador">
+    <div class="wrap">
+      <h2 class="h2 rv">Monte seu<br><span class="hl">orçamento</span></h2>
+      <p class="sub rv" style="--i:1">Marque o que você precisa e veja o valor na hora. Alterações sem custo extra e em até 12x sem juros.</p>
+
+      <form class="sim-grid" id="sim" novalidate>
+        <div class="sim-steps">
+          <fieldset class="sim-step rv">
+            <legend><span class="n">1</span>Quem é você</legend>
+            <div class="sim-fields">
+              <label class="fld"><span>Seu nome</span><input name="nome" type="text" autocomplete="name" placeholder="Como você se chama?"></label>
+              <label class="fld"><span>Nome do negócio <em>(opcional)</em></span><input name="negocio" type="text" autocomplete="organization" placeholder="Empresa, igreja, marca…"></label>
+            </div>
+            <p class="sim-q" id="perfilLbl">Qual é o seu perfil?</p>
+            <div class="pick" role="radiogroup" aria-labelledby="perfilLbl">
+              <label><input type="radio" name="perfil" value="pf" checked><span>Pessoa física</span></label>
+              <label><input type="radio" name="perfil" value="mei"><span>MEI</span></label>
+              <label><input type="radio" name="perfil" value="ong"><span>Igreja / ONG</span></label>
+              <label><input type="radio" name="perfil" value="pequena"><span>Pequena empresa<small>ME / EPP</small></span></label>
+              <label><input type="radio" name="perfil" value="media"><span>Média empresa</span></label>
+              <label><input type="radio" name="perfil" value="grande"><span>Grande empresa</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="sim-step rv">
+            <legend><span class="n">2</span>O que você precisa</legend>
+
+            <div class="svc-pick" data-svc="identidade">
+              <label class="svc-toggle"><input type="checkbox" name="svc" value="identidade"><span class="tg"><span class="ti"><i class="ph-bold ph-pen-nib" aria-hidden="true"></i></span><span><b>Identidade visual</b><small>Logo, cores e tipografia</small></span><span class="box"><i class="ph-bold ph-check" aria-hidden="true"></i></span></span></label>
+              <div class="svc-opts">
+                <div class="opts c3">
+                  <label class="opt"><input type="radio" name="identidade" value="basica" checked><span><b>Básica</b><em>Logo, paleta e tipografia</em></span></label>
+                  <label class="opt"><input type="radio" name="identidade" value="media"><span><b>Média</b><em>+ aplicações e mockups</em></span></label>
+                  <label class="opt"><input type="radio" name="identidade" value="completa"><span><b>Completa</b><em>Sob medida</em></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="svc-pick" data-svc="artes">
+              <label class="svc-toggle"><input type="checkbox" name="svc" value="artes"><span class="tg"><span class="ti"><i class="ph-bold ph-images" aria-hidden="true"></i></span><span><b>Pacote de artes</b><small>Posts, carrosséis, flyers e banners</small></span><span class="box"><i class="ph-bold ph-check" aria-hidden="true"></i></span></span></label>
+              <div class="svc-opts">
+                <div class="opts c3">
+                  <label class="opt"><input type="radio" name="artes" value="5" checked><span><b>5 artes</b><em>Pra começar</em></span></label>
+                  <label class="opt"><input type="radio" name="artes" value="10"><span><b>10 artes</b><em>O mês inteiro</em></span></label>
+                  <label class="opt"><input type="radio" name="artes" value="20"><span><b>20 artes</b><em>Campanha ou evento</em></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="svc-pick" data-svc="videos">
+              <label class="svc-toggle"><input type="checkbox" name="svc" value="videos"><span class="tg"><span class="ti"><i class="ph-bold ph-film-strip" aria-hidden="true"></i></span><span><b>Pacote de vídeos</b><small>Vídeos institucionais e Reels com legenda</small></span><span class="box"><i class="ph-bold ph-check" aria-hidden="true"></i></span></span></label>
+              <div class="svc-opts">
+                <div class="opts c3">
+                  <label class="opt"><input type="radio" name="videos" value="4" checked><span><b>4 vídeos</b><em>Pra começar</em></span></label>
+                  <label class="opt"><input type="radio" name="videos" value="8"><span><b>8 vídeos</b><em>Dois por semana</em></span></label>
+                  <label class="opt"><input type="radio" name="videos" value="12"><span><b>12 vídeos</b><em>Presença forte</em></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="svc-pick" data-svc="redes">
+              <label class="svc-toggle"><input type="checkbox" name="svc" value="redes"><span class="tg"><span class="ti"><i class="ph-bold ph-instagram-logo" aria-hidden="true"></i></span><span><b>Gestão de redes</b><small>Planejamento, artes, legendas e postagem (mensal)</small></span><span class="box"><i class="ph-bold ph-check" aria-hidden="true"></i></span></span></label>
+              <div class="svc-opts">
+                <div class="opts c3">
+                  <label class="opt"><input type="radio" name="plano" value="2" checked><span><b>2 posts</b><em>por semana</em></span></label>
+                  <label class="opt"><input type="radio" name="plano" value="3"><span><b>3 posts</b><em>por semana</em></span></label>
+                  <label class="opt"><input type="radio" name="plano" value="5"><span><b>5 posts</b><em>por semana</em></span></label>
+                </div>
+                <div class="extra"><p>Carrosséis no mês<small>De 5 a 10 slides</small></p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos carrosséis">−</button><input type="number" name="carrossel" value="0" min="0" max="20" inputmode="numeric" aria-label="Carrosséis no mês"><button type="button" data-step="1" aria-label="Mais carrosséis">+</button></div></div>
+                <div class="extra"><p>Reels editados no mês</p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos reels">−</button><input type="number" name="reels" value="0" min="0" max="20" inputmode="numeric" aria-label="Reels no mês"><button type="button" data-step="1" aria-label="Mais reels">+</button></div></div>
+                <div class="extra"><p>Outras redes além do Instagram<small>TikTok, Facebook…</small></p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos redes">−</button><input type="number" name="redesExtra" value="0" min="0" max="5" inputmode="numeric" aria-label="Redes extras"><button type="button" data-step="1" aria-label="Mais redes">+</button></div></div>
+                <label class="chk-row"><input type="checkbox" name="stories"><span><i class="ph-bold ph-plus" aria-hidden="true"></i>Stories (até 3 por semana)</span></label>
+              </div>
+            </div>
+
+            <div class="svc-pick" data-svc="captacao">
+              <label class="svc-toggle"><input type="checkbox" name="svc" value="captacao"><span class="tg"><span class="ti"><i class="ph-bold ph-video-camera" aria-hidden="true"></i></span><span><b>Gravação no local</b><small>Captação presencial, só no Rio de Janeiro</small></span><span class="box"><i class="ph-bold ph-check" aria-hidden="true"></i></span></span></label>
+              <div class="svc-opts">
+                <div class="extra"><p>Dias de gravação</p><div class="stepper"><button type="button" data-step="-1" aria-label="Menos dias">−</button><input type="number" name="dias" value="1" min="1" max="10" inputmode="numeric" aria-label="Dias de gravação"><button type="button" data-step="1" aria-label="Mais dias">+</button></div></div>
+                <p class="note"><i class="ph-bold ph-info" aria-hidden="true"></i> Valor da diária, à parte do restante do trabalho. Condições combinadas no WhatsApp.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="sim-mini" aria-hidden="true"><p>Seu orçamento<b id="miniTotal">Marque um serviço</b></p><a href="#simResumo">Ver resumo<i class="ph-bold ph-arrow-down"></i></a></div>
+        </div>
+
+        <aside class="sim-sum" id="simResumo" aria-live="polite">
+          <div class="sum-in">
+            <h3>Seu orçamento</h3>
+            <p class="sum-who" id="sumWho">Pessoa física</p>
+            <p class="sum-empty" id="sumEmpty">Marque pelo menos um serviço e o valor aparece aqui na hora.</p>
+            <ul class="sum-lines" id="sumLines"></ul>
+            <div id="sumTotals"></div>
+            <div class="sum-perks"><span><i class="ph-bold ph-check" aria-hidden="true"></i>Alterações sem custo</span><span><i class="ph-bold ph-check" aria-hidden="true"></i>12x sem juros</span><span><i class="ph-bold ph-check" aria-hidden="true"></i>Combo: 10% off</span></div>
+            <a class="btn btn-wa" id="simSend" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar no WhatsApp<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
+            <p class="sum-hint">Valor estimado. O fechamento é combinado no WhatsApp.</p>
+          </div>
+        </aside>
+      </form>
     </div>
   </section>
 
@@ -564,7 +776,7 @@
       <div class="perks">
         <div class="perk rv">
           <span class="perk-ico"><i class="ph-bold ph-gift" aria-hidden="true"></i></span>
-          <div><h3>Mais do que o combinado</h3><p>O que foi fechado vem, e mais um pouco. Sem acréscimo no valor.</p></div>
+          <div><h3>Mais do que o combinado</h3><p>O que foi fechado vem, e mais um pouco. Sem acréscimo no valor, nem por alteração.</p></div>
         </div>
         <div class="perk rv" style="--i:1">
           <span class="perk-ico"><i class="ph-bold ph-chat-circle-dots" aria-hidden="true"></i></span>
@@ -646,8 +858,8 @@
 
   const topBar = document.getElementById('top');
   const bar = document.getElementById('waBar');
-  let pastHero = false, atContact = false;
-  const syncBar = () => bar.classList.toggle('on', pastHero && !atContact);
+  let pastHero = false, atContact = false, atSim = false;
+  const syncBar = () => bar.classList.toggle('on', pastHero && !atContact && !atSim);
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -683,8 +895,123 @@
   // barra do WhatsApp aparece depois do hero e some quando o contato está na tela
   new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; syncBar(); })
     .observe(document.querySelector('.hx-strip'));
+  new IntersectionObserver(([e]) => { atSim = e.isIntersecting; syncBar(); }).observe(document.getElementById('sim'));
   new IntersectionObserver(([e]) => { atContact = e.isIntersecting; syncBar(); }, { threshold: 0.15 })
     .observe(document.getElementById('contato'));
+
+  // ---------- simulador: tabela de preços (edite aqui) ----------
+  const PRECOS = {
+    perfis: {
+      pf: { nome: 'Pessoa física', k: 1 },
+      mei: { nome: 'MEI', k: 1 },
+      ong: { nome: 'Igreja / ONG', k: 1 },
+      pequena: { nome: 'Pequena empresa (ME/EPP)', k: 1.15 },
+      media: { nome: 'Média empresa', k: 1.35 },
+      grande: { nome: 'Grande empresa', k: 1.6 },
+    },
+    identidade: {
+      basica: { nome: 'Básica', v: 327.97 },
+      media: { nome: 'Média', v: 653.87 },
+      completa: { nome: 'Completa', v: 1037.97, aPartir: true },
+    },
+    artes: { 5: 317.97, 10: 437.89, 20: 1047.93 },
+    videos: { 4: 427.97, 8: 737.89, 12: 1067.93 },
+    redes: { planos: { 2: 397.89, 3: 557.93, 5: 857.97 }, carrossel: 107.93, reels: 67.97, stories: 127.89, redeExtra: 87.97 },
+    diaria: 257.97, // captação: valor fixo, fora do ajuste de perfil e do combo
+    combo: 0.10,
+    parcelas: 12,
+  };
+
+  const form = document.getElementById('sim');
+  const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  // nunca termina em ,00
+  const quebrado = (v) => { let c = Math.round(v * 100); if (c % 100 === 0) c -= 3; return c / 100; };
+  const clampInt = (el) => { const n = Math.min(Math.max(parseInt(el.value, 10) || 0, +el.min), +el.max); el.value = n; return n; };
+
+  function calcular() {
+    const f = form.elements;
+    const perfil = PRECOS.perfis[f.perfil.value];
+    const marcados = [...form.querySelectorAll('input[name="svc"]:checked')].map((i) => i.value);
+    form.querySelectorAll('.svc-pick').forEach((b) => b.classList.toggle('on', marcados.includes(b.dataset.svc)));
+
+    const linhas = []; // { txt, det, v, mensal, fixo, aPartir }
+    if (marcados.includes('identidade')) {
+      const p = PRECOS.identidade[f.identidade.value];
+      linhas.push({ txt: `Identidade visual ${p.nome}`, det: p.aPartir ? 'a partir de' : '', v: p.v, aPartir: p.aPartir });
+    }
+    if (marcados.includes('artes')) linhas.push({ txt: `Pacote de ${f.artes.value} artes`, v: PRECOS.artes[f.artes.value] });
+    if (marcados.includes('videos')) linhas.push({ txt: `Pacote de ${f.videos.value} vídeos`, det: 'institucionais / Reels', v: PRECOS.videos[f.videos.value] });
+    if (marcados.includes('redes')) {
+      const r = PRECOS.redes; const car = clampInt(f.carrossel), ree = clampInt(f.reels), ext = clampInt(f.redesExtra);
+      const det = [`${f.plano.value} posts por semana`];
+      let v = r.planos[f.plano.value];
+      if (car) { v += car * r.carrossel; det.push(`${car} ${car > 1 ? 'carrosséis' : 'carrossel'}`); }
+      if (ree) { v += ree * r.reels; det.push(`${ree} reels`); }
+      if (f.stories.checked) { v += r.stories; det.push('stories'); }
+      if (ext) { v += ext * r.redeExtra; det.push(`+${ext} rede${ext > 1 ? 's' : ''}`); }
+      linhas.push({ txt: 'Gestão de redes', det: det.join(', '), v, mensal: true });
+    }
+    if (marcados.includes('captacao')) {
+      const d = clampInt(f.dias);
+      linhas.push({ txt: 'Gravação no local (RJ)', det: `${d} dia${d > 1 ? 's' : ''}`, v: d * PRECOS.diaria, fixo: true });
+    }
+
+    const combo = linhas.length >= 2;
+    linhas.forEach((l) => { l.final = quebrado(l.fixo ? l.v : l.v * perfil.k); });
+    const soma = (lst) => lst.reduce((t, l) => t + l.final, 0);
+    const desc = (lst) => (combo ? lst.filter((l) => !l.fixo).reduce((t, l) => t + l.final, 0) * PRECOS.combo : 0);
+    const unico = linhas.filter((l) => !l.mensal), mensal = linhas.filter((l) => l.mensal);
+    const totU = unico.length ? quebrado(soma(unico) - desc(unico)) : 0;
+    const totM = mensal.length ? quebrado(soma(mensal) - desc(mensal)) : 0;
+    const aPartir = linhas.some((l) => l.aPartir);
+
+    // resumo na tela
+    const nome = f.nome.value.trim(), negocio = f.negocio.value.trim();
+    document.getElementById('sumWho').textContent = [nome, negocio, perfil.nome].filter(Boolean).join(' · ') +
+      (perfil.k > 1 ? ` (valores ajustados +${Math.round((perfil.k - 1) * 100)}%)` : '');
+    document.getElementById('sumEmpty').hidden = linhas.length > 0;
+    document.getElementById('sumLines').innerHTML = linhas.map((l) =>
+      `<li><span>${l.txt}${l.det ? `<small>${l.det}</small>` : ''}</span><b>${brl(l.final)}${l.mensal ? '/mês' : ''}</b></li>`).join('');
+
+    const bloco = (titulo, lst, tot, mes) => {
+      if (!lst.length) return '';
+      const d = desc(lst);
+      return `<div class="sum-block">
+        ${d ? `<div class="sum-row"><span>Subtotal</span><span>${brl(soma(lst))}</span></div><div class="sum-row disc"><span>Combo (−10%)</span><span>−${brl(quebrado(d))}</span></div>` : ''}
+        <div class="sum-total"><span>${titulo}</span><b>${aPartir && !mes ? '<small style="font-size:14px;font-family:var(--body)">a partir de </small>' : ''}${brl(tot)}${mes ? '<small style="font-size:16px">/mês</small>' : ''}</b></div>
+        ${mes ? '' : `<p class="sum-parc">ou ${PRECOS.parcelas}x de ${brl(Math.ceil(tot / PRECOS.parcelas * 100) / 100)} sem juros</p>`}
+      </div>`;
+    };
+    document.getElementById('sumTotals').innerHTML = bloco('Pagamento único', unico, totU, false) + bloco('Mensal', mensal, totM, true) +
+      (aPartir ? '<p class="sum-from">A identidade completa varia com o que for pedido. O valor final sai na conversa.</p>' : '');
+    document.getElementById('miniTotal').textContent = linhas.length ? [totU && brl(totU), totM && `${brl(totM)}/mês`].filter(Boolean).join(' + ') : 'Marque um serviço';
+
+    // mensagem do WhatsApp
+    const send = document.getElementById('simSend');
+    send.setAttribute('aria-disabled', linhas.length ? 'false' : 'true');
+    const msg = ['Olá! Montei um orçamento no site:', '',
+      nome ? `Nome: ${nome}` : null, negocio ? `Negócio: ${negocio}` : null, `Perfil: ${perfil.nome}`, '',
+      ...linhas.map((l) => `• ${l.txt}${l.det ? ` (${l.det})` : ''}: ${brl(l.final)}${l.mensal ? '/mês' : ''}`), '',
+      combo ? 'Desconto combo: 10%' : null,
+      totU ? `Total único: ${aPartir ? 'a partir de ' : ''}${brl(totU)} (ou ${PRECOS.parcelas}x de ${brl(Math.ceil(totU / PRECOS.parcelas * 100) / 100)} sem juros)` : null,
+      totM ? `Mensal: ${brl(totM)}/mês` : null,
+    ].filter((x) => x !== null);
+    send.href = 'https://wa.me/5521960194636?text=' + encodeURIComponent(msg.join('\n').trim());
+  }
+
+  form.addEventListener('input', calcular);
+  form.addEventListener('change', calcular);
+  form.addEventListener('submit', (e) => e.preventDefault());
+  form.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-step]'); if (!b) return;
+    const inp = b.parentElement.querySelector('input');
+    inp.value = (parseInt(inp.value, 10) || 0) + +b.dataset.step; clampInt(inp); calcular();
+  });
+  // botões dos cards de serviço já marcam o serviço no simulador
+  document.querySelectorAll('[data-pick]').forEach((a) => a.addEventListener('click', () => {
+    const cb = form.querySelector(`input[name="svc"][value="${a.dataset.pick}"]`); if (cb) cb.checked = true; calcular();
+  }));
+  calcular();
 
   // só esconde para revelar quando o script chegou até aqui sem erro
   document.documentElement.classList.add('js');
