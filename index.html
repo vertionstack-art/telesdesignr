@@ -85,7 +85,7 @@
   .mark,.h2,.svc h3,.tier b,.big-since,.step-n,.foot-big{font-stretch:66%;font-weight:800}
 
   /* ---------- hero (artboard de 1440u; u = 1px no artboard) ---------- */
-  .hx{--u:min(calc(100vw / 1440), 1.333px);--paper:#dcd3ee;--paper-2:#cbc0e2;--hink:#130e1d;--hgrey:#5b5370;
+  .hx{--u:min(calc(100vw / 1440), 1.333px);--paper:#070707;--paper-2:#18151f;--hink:#f5f3fa;--hgrey:#a8a0bb;
     position:relative;background:var(--paper);color:var(--hink);overflow:hidden;font-size:calc(var(--u) * 14)}
   .hx-art{position:relative;width:calc(var(--u) * 1440);height:calc(var(--u) * 938);margin:0 auto}
   .hx-art > *{position:absolute;z-index:2}
@@ -93,12 +93,11 @@
 
   .hx-photo{left:calc(var(--u) * 338);top:calc(var(--u) * -86);width:calc(var(--u) * 764);height:calc(var(--u) * 1024)}
   .hx-art > .hx-photo{z-index:1}
-  /* fundo da cor do papel dentro da caixa: a foto P&B herda o tom lilás pelo modo luminosity */
-  .hx-ph{position:absolute;inset:0;background:var(--paper);isolation:isolate}
-  .hx-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0;mix-blend-mode:luminosity;
+  .hx-ph{position:absolute;inset:0}
+  .hx-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
   .hx-plate{position:absolute;left:calc(var(--u) * 200);top:calc(var(--u) * 690);width:calc(var(--u) * 364);height:calc(var(--u) * 73);display:flex;align-items:center;gap:calc(var(--u) * 14);padding:0 calc(var(--u) * 20);
-    border-radius:calc(var(--u) * 12);background:rgba(19,14,29,.55);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+    border-radius:calc(var(--u) * 12);background:rgba(139,44,255,.32);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.22);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
   .hx-plate svg{width:calc(var(--u) * 34);height:calc(var(--u) * 30);flex:none}
   .hx-plate b{font-size:calc(var(--u) * 21);letter-spacing:.02em;font-stretch:118%;font-weight:700;white-space:nowrap}
   .hx-plate .menu{margin-left:auto;display:grid;gap:calc(var(--u) * 6)}
@@ -108,17 +107,17 @@
   .hx-logos span{display:flex;align-items:center;gap:calc(var(--u) * 7)}
   .hx-logos i{font-size:calc(var(--u) * 16);color:var(--lilac)}
 
-  .hx-nav{left:calc(var(--u) * 57);top:calc(var(--u) * 61);height:calc(var(--u) * 48);display:flex;align-items:center;padding:calc(var(--u) * 5);border-radius:999px;background:#fff;box-shadow:0 8px 24px -16px rgba(19,14,29,.5)}
+  .hx-nav{left:calc(var(--u) * 57);top:calc(var(--u) * 61);height:calc(var(--u) * 48);display:flex;align-items:center;padding:calc(var(--u) * 5);border-radius:999px;background:#fff;color:#0b0a0e;box-shadow:0 8px 24px -16px rgba(0,0,0,.6)}
   .hx-nav a{position:relative;z-index:1;height:100%;display:grid;place-items:center;padding:0 calc(var(--u) * 18);border-radius:999px;font-size:calc(var(--u) * 14);font-weight:600;transition:color 250ms ease}
   .hx-nav a.on{color:#fff}
   .hx-pill{position:absolute;z-index:0;top:calc(var(--u) * 5);bottom:calc(var(--u) * 5);left:0;width:0;border-radius:999px;background:var(--purple);transition:transform 400ms var(--ease-out),width 400ms var(--ease-out)}
   .hx-date{left:calc(var(--u) * 1038);top:calc(var(--u) * 66);font-size:calc(var(--u) * 13);line-height:1.35;font-weight:600}
   .hx-date span{display:block;color:var(--hgrey);font-weight:500}
-  .hbtn{display:inline-flex;align-items:center;justify-content:center;gap:calc(var(--u) * 8);border-radius:999px;background:var(--hink);color:#fff;font-weight:700;font-size:calc(var(--u) * 14);white-space:nowrap;
+  .hbtn{display:inline-flex;align-items:center;justify-content:center;gap:calc(var(--u) * 8);border-radius:999px;background:#fff;color:#0b0a0e;font-weight:700;font-size:calc(var(--u) * 14);white-space:nowrap;
     touch-action:manipulation;user-select:none;-webkit-user-select:none;transition:transform 200ms var(--ease-out),background-color 200ms ease}
   .hbtn i{font-size:1.15em}
   .hbtn:active{transform:scale(.97)}
-  @media (hover:hover) and (pointer:fine){.hbtn:hover{transform:translateY(-1px);background:var(--purple)}}
+  @media (hover:hover) and (pointer:fine){.hbtn:hover{transform:translateY(-1px);background:var(--purple);color:#fff}}
   .hx-contact{left:calc(var(--u) * 1237);top:calc(var(--u) * 63);width:calc(var(--u) * 146);height:calc(var(--u) * 46)}
 
   .hx-title{left:calc(var(--u) * 57);top:calc(var(--u) * 246);margin:0;font-size:calc(var(--u) * 90);line-height:.86;letter-spacing:-.06em;text-transform:uppercase}
@@ -130,19 +129,19 @@
   .hx-about{left:calc(var(--u) * 57);top:calc(var(--u) * 458);width:calc(var(--u) * 290)}
   .hx-about .lbl{display:flex;align-items:center;gap:calc(var(--u) * 8);font-size:calc(var(--u) * 13);font-weight:700;letter-spacing:.06em}
   .hx-about .lbl::before{content:"";width:calc(var(--u) * 8);height:calc(var(--u) * 8);border-radius:50%;background:var(--purple)}
-  .hx-about p{margin-top:calc(var(--u) * 14);font-size:calc(var(--u) * 15);line-height:1.45;font-weight:500;color:#2c2540}
+  .hx-about p{margin-top:calc(var(--u) * 14);font-size:calc(var(--u) * 15);line-height:1.45;font-weight:500;color:#d4cde2}
   .hx-cta{left:calc(var(--u) * 57);top:calc(var(--u) * 584);height:calc(var(--u) * 48);padding:0 calc(var(--u) * 6) 0 calc(var(--u) * 22)}
   .hx-cta .ic{display:grid;place-items:center;width:calc(var(--u) * 36);height:calc(var(--u) * 36);border-radius:50%;background:var(--wa);color:#03200e}
 
   .hx-stats{left:calc(var(--u) * 57);top:calc(var(--u) * 693);width:calc(var(--u) * 341);height:calc(var(--u) * 208);padding:calc(var(--u) * 6);border-radius:calc(var(--u) * 16);background:var(--paper-2);display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u) * 6)}
   .hx-card{position:relative;border-radius:calc(var(--u) * 11);overflow:hidden;padding:calc(var(--u) * 12);display:flex;flex-direction:column}
-  .hx-card.dark{background:var(--hink);color:#fff}
+  .hx-card.dark{background:#110f16;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
   .hx-card b.num{font-size:calc(var(--u) * 34);line-height:1;font-stretch:104%;font-weight:700;letter-spacing:-.04em}
   .hx-card small{display:block;margin-top:calc(var(--u) * 3);font-size:calc(var(--u) * 11);font-weight:600;opacity:.8;line-height:1.3}
   .hx-marks{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u) * 5) calc(var(--u) * 6);margin-top:calc(var(--u) * 12);font-size:calc(var(--u) * 10.5);font-weight:600;color:#cfc7e0}
   .hx-marks span{display:flex;align-items:center;gap:calc(var(--u) * 4)}
   .hx-marks i{color:var(--purple-2);font-size:calc(var(--u) * 12)}
-  .hx-bar{margin-top:auto;display:flex;align-items:center;justify-content:space-between;height:calc(var(--u) * 30);padding:0 calc(var(--u) * 6) 0 calc(var(--u) * 10);border-radius:calc(var(--u) * 7);background:#fff;color:var(--hink);font-size:calc(var(--u) * 11);font-weight:700;transition:background-color 200ms ease}
+  .hx-bar{margin-top:auto;display:flex;align-items:center;justify-content:space-between;height:calc(var(--u) * 30);padding:0 calc(var(--u) * 6) 0 calc(var(--u) * 10);border-radius:calc(var(--u) * 7);background:#fff;color:#0b0a0e;font-size:calc(var(--u) * 11);font-weight:700;transition:background-color 200ms ease}
   @media (hover:hover) and (pointer:fine){.hx-bar:hover{background:var(--lilac)}}
   .hx-card.photo{color:#fff;justify-content:space-between}
   .hx-card.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
@@ -152,7 +151,7 @@
   .hx-card .br{text-align:right}
 
   .hx-tag{right:calc(var(--u) * 57);top:calc(var(--u) * 258);display:flex;align-items:center;gap:calc(var(--u) * 10);height:calc(var(--u) * 44);padding:0 calc(var(--u) * 16) 0 calc(var(--u) * 6);border-radius:999px;
-    background:rgba(255,255,255,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6);font-weight:700;font-size:calc(var(--u) * 14)}
+    background:rgba(255,255,255,.07);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.16);font-weight:700;font-size:calc(var(--u) * 14)}
   .hx-tag .chk{display:grid;place-items:center;width:calc(var(--u) * 32);height:calc(var(--u) * 32);border-radius:50%;background:var(--purple);color:#fff;font-size:calc(var(--u) * 15)}
   .hx-avail{right:calc(var(--u) * 57);top:calc(var(--u) * 430);text-align:right;font-size:calc(var(--u) * 26);line-height:1.15;font-weight:700;letter-spacing:-.02em}
   .hx-avail span{display:inline-flex;align-items:center;gap:calc(var(--u) * 8);color:var(--hgrey)}
@@ -171,7 +170,7 @@
   @media (hover:hover) and (pointer:fine){.hx-out:hover .hx-q img{transform:scale(1.65)}.hx-out:hover .go{transform:rotate(45deg)}}
 
   /* barra preta */
-  .hx-strip{background:#000;color:#fff;border-bottom:1px solid rgba(255,255,255,.18)}
+  .hx-strip{background:#000;color:#fff;border-block:1px solid rgba(255,255,255,.14)}
   .hx-strip .in{--u:min(calc(100vw / 1440), 1.333px);max-width:calc(var(--u) * 1440);height:calc(var(--u) * 111);min-height:64px;margin:0 auto;padding:0 calc(var(--u) * 57);display:flex;align-items:center;justify-content:space-between;
     font-family:var(--display);font-stretch:118%;font-weight:600;font-size:max(11px, calc(var(--u) * 14));letter-spacing:.06em}
   .hx-strip .g{color:var(--purple-2)}
@@ -419,7 +418,7 @@
       <a class="hbtn hx-cta hx-fx" style="--d:4" href="https://wa.me/5521960194636?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp<span class="ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span></a>
 
       <div class="hx-photo">
-        <div class="hx-ph"><img src="img/teles-designr.webp" width="896" height="1227" fetchpriority="high" alt="Lucas, da Teles Designr, de óculos e camiseta preta"></div>
+        <div class="hx-ph"><img src="img/teles-designr.webp" width="896" height="1227" fetchpriority="high" alt="Lucas, da Teles Designr, de óculos e camiseta preta, em fundo preto"></div>
         <div class="hx-plate hx-fx" style="--d:6">
           <svg viewBox="0 0 34 30" aria-hidden="true"><path d="M0 30 L13 4 L20 18 Z" fill="#8b2cff"/><path d="M15 30 L26 8 L34 30 Z" fill="#fff"/></svg>
           <b class="wide">TELES DESIGNR</b>
